@@ -1,0 +1,21 @@
+[user]
+	name = Rajat Goel
+	email = 405844+rajatgoel@users.noreply.github.com
+[fetch]
+	prune = true
+	pruneTags = true
+[push]
+	default = simple
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[branch]
+	autoSetupMerge = simple
+[core]
+	pager = less -FRX
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential
