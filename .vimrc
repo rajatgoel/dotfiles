@@ -39,6 +39,17 @@ if !has('nvim')
   finish
 endif
 
+" Restore the saved cursor position the first time a file is displayed.
+augroup RestoreCursor
+  autocmd!
+  autocmd BufReadPost * autocmd RestoreCursor BufWinEnter <buffer> ++once
+    \ let s:last_line = line("'\"")
+    \ | if s:last_line >= 1 && s:last_line <= line("$") && &filetype !~# 'commit'
+    \      && index(['xxd', 'gitrebase'], &filetype) == -1 && !&diff
+    \ |   execute "normal! g`\""
+    \ | endif
+augroup END
+
 lua << EOF
 -- Plugins
 vim.pack.add({

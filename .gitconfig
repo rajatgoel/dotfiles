@@ -4,11 +4,16 @@
 [fetch]
 	prune = true
 	pruneTags = true
+	writeCommitGraph = true
 [push]
 	default = simple
 	autoSetupRemote = true
 [pull]
 	rebase = true
+[rebase]
+	updateRefs = true
+[init]
+	defaultBranch = main
 [branch]
 	autoSetupMerge = simple
 [core]
